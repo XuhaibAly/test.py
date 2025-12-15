@@ -1,1 +1,1 @@
-print ("WASSSSS Uuuupppppp")
+print ("WASSSSS Uuuupppppp v6")
