@@ -1,89 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuhaib Lab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zuhaib Lab</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
-        }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        scroll-behavior: smooth;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
+    header {
+        padding: 20px 50px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
 
-        nav a {
-            color: #ffffff;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    nav a {
+        color: #ffffff;
+        margin-left: 25px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 120px 20px;
-        }
+    nav a:hover {
+        color: #00c6ff;
+        transform: translateY(-2px);
+    }
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+    .hero {
+        text-align: center;
+        padding: 180px 20px 120px 20px;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1557683316-973673baf926?fit=crop&w=1400&q=80') no-repeat center center/cover;
+    }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: auto;
-            opacity: 0.9;
-        }
+    .hero h2 {
+        font-size: 48px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        animation: fadeInDown 1.2s ease-out;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: #00c6ff;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
+    .hero p {
+        font-size: 20px;
+        max-width: 650px;
+        margin: 20px auto 0 auto;
+        opacity: 0.9;
+        line-height: 1.6;
+        animation: fadeInUp 1.5s ease-out;
+    }
 
-        .btn:hover {
-            background: #00a2d6;
-        }
+    .btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 35px;
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 50px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 13px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+        background: linear-gradient(90deg, #0072ff, #00c6ff);
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        font-size: 14px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        color: #ddd;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .hero h2 { font-size: 36px; }
+        .hero p { font-size: 18px; }
+        nav a { font-size: 14px; margin-left: 15px; }
+    }
+</style>
 </head>
-
 <body>
 
 <header>
@@ -99,8 +139,9 @@
 <section class="hero">
     <h2>Innovating the Digital Future</h2>
     <p>
-        Zuhaib Lab is a technology-driven workspace focused on building
-        modern web solutions, cloud platforms, and scalable infrastructure.
+        Zuhaib Lab is a modern tech workspace dedicated to building
+        high-quality web solutions, cloud platforms, and scalable infrastructures. 
+        Join us on our journey to create innovative digital experiences.
     </p>
     <a class="btn" href="#">Get Started</a>
 </section>
@@ -111,3 +152,4 @@
 
 </body>
 </html>
+
